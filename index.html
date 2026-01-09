@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Video: All-in-one AI Video Generator | Viddo AI</title>
+    <meta name="description" content="Create stunning AI-generated videos with Veo3, Runway, Kling, and Hailuo etc. Turn text or image into high-quality videos using powerful generative AI.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Promotion Banner -->
+    <div class="promo-banner">
+        <div class="promo-content">
+            <span class="promo-label">💥 The Unbeatable Lowest Price</span>
+            <p class="promo-text">
+                <span class="promo-model">Veo3</span>: As low as 
+                <span class="promo-price">$0.86</span> per video
+            </p>
+            <p class="promo-text">
+                <span class="promo-model">Veo3.1</span>: As low as 
+                <span class="promo-price">$1.03</span> per video
+            </p>
+        </div>
+        <button class="promo-close" aria-label="Close promotion">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="promo-close-icon">
+                <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <h1>Viddo AI</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#video">AI Video</a></li>
+                    <li><a href="#image">AI Image</a></li>
+                    <li><a href="#effects">AI Effects</a></li>
+                    <li><a href="#voice">AI Voice</a></li>
+                    <li><a href="#pricing">Price</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="theme-selector">
+                        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="theme-icon">
+                                <path d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="theme-dropdown" id="themeDropdown">
+                            <div class="theme-option" data-theme="purple">
+                                <div class="theme-preview">
+                                    <span class="color-dot" style="background: linear-gradient(135deg, #AF4995, #7361DE);"></span>
+                                </div>
+                                <span class="theme-name">Purple-Pink</span>
+                            </div>
+                            <div class="theme-option" data-theme="blue">
+                                <div class="theme-preview">
+                                    <span class="color-dot" style="background: linear-gradient(135deg, #06B6D4, #3B82F6);"></span>
+                                </div>
+                                <span class="theme-name">Blue-Cyan</span>
+                            </div>
+                            <div class="theme-option" data-theme="green">
+                                <div class="theme-preview">
+                                    <span class="color-dot" style="background: linear-gradient(135deg, #059669, #10B981);"></span>
+                                </div>
+                                <span class="theme-name">Green-Emerald</span>
+                            </div>
+                            <div class="theme-option" data-theme="orange">
+                                <div class="theme-preview">
+                                    <span class="color-dot" style="background: linear-gradient(135deg, #EF4444, #F97316);"></span>
+                                </div>
+                                <span class="theme-name">Orange-Red</span>
+                            </div>
+                            <div class="theme-option" data-theme="pink">
+                                <div class="theme-preview">
+                                    <span class="color-dot" style="background: linear-gradient(135deg, #F43F5E, #EC4899);"></span>
+                                </div>
+                                <span class="theme-name">Pink-Rose</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-signin">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="https://cdn.viddo.ai/video/homeScreen01.webm" type="video/webm">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title fade-in-up">
+                    All-in-one AI Video & Image Generator
+                </h1>
+                <p class="hero-subtitle fade-in-up delay-1">
+                    Sora 2 Pro | Veo3.1 | Nano Banana Pro | Hailuo 2.3 | Seedance | Runway | Kling | Midjourney | GPT 4o
+                </p>
+                <div class="hero-badge fade-in-up delay-2">
+                    <span class="badge-new">New</span>
+                    <span>Newly Launched: Create Unlimited-Length Videos</span>
+                    <a href="#" class="badge-link">Try Now</a>
+                </div>
+                <div class="hero-buttons fade-in-up delay-3">
+                    <button class="btn-primary btn-large">Create Video</button>
+                    <button class="btn-secondary btn-large">Create Image</button>
+                </div>
+                <p class="hero-description fade-in-up delay-4">
+                    Create stunning AI-generated videos with Veo3, Runway, Kling, and Hailuo etc. Turn text or image into high-quality videos using powerful generative AI.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Model Carousel -->
+        <div class="model-carousel fade-in-up delay-5">
+            <div class="carousel-track">
+                <div class="model-card">Sora 2 Pro</div>
+                <div class="model-card">Storyboard</div>
+                <div class="model-card">Sora 2 & Sora 2 Pro</div>
+                <div class="model-card">Google Veo 3</div>
+                <div class="model-card">Google Veo 3.1</div>
+                <div class="model-card">Google Veo 3.1 Fast</div>
+                <div class="model-card">Runway Gen-4</div>
+                <div class="model-card">Seedance V1.5 Pro</div>
+                <div class="model-card">Hailuo 2.3</div>
+                <div class="model-card">Wan 2.6</div>
+                <div class="model-card">Kling V2.6</div>
+                <div class="model-card">Nano Banana Pro</div>
+                <div class="model-card">GPT 4o</div>
+                <div class="model-card">Flux 2</div>
+                <div class="model-card">Midjourney</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="model-card">Sora 2 Pro</div>
+                <div class="model-card">Storyboard</div>
+                <div class="model-card">Sora 2 & Sora 2 Pro</div>
+                <div class="model-card">Google Veo 3</div>
+                <div class="model-card">Google Veo 3.1</div>
+                <div class="model-card">Google Veo 3.1 Fast</div>
+                <div class="model-card">Runway Gen-4</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title scroll-fade">AI Video & Image Generator With Viddo AI</h2>
+            <p class="section-subtitle scroll-fade">Experience stunning examples of Image-to-Video, Text-to-Video, Video-to-Video, Text-to-Image, and Image-to-Image.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card scroll-fade">
+                    <div class="feature-icon">🎬</div>
+                    <h3>Image to Video</h3>
+                    <p>Turn any image into a dynamic video with AI. Animate photos, create motion from stills, and bring visuals to life in seconds.</p>
+                    <button class="btn-primary">Create</button>
+                </div>
+                
+                <div class="feature-card scroll-fade">
+                    <div class="feature-icon">✍️</div>
+                    <h3>Text to Video</h3>
+                    <p>Turn words into creative videos. Simply enter a prompt and watch your ideas transform into captivating videos.</p>
+                    <button class="btn-primary">Create</button>
+                </div>
+                
+                <div class="feature-card scroll-fade">
+                    <div class="feature-icon">🖼️</div>
+                    <h3>Image to Image</h3>
+                    <p>Remix and reimagine any image. Transform visuals, change styles, and generate artistic variations with ease.</p>
+                    <button class="btn-primary">Create</button>
+                </div>
+                
+                <div class="feature-card scroll-fade">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Text to Image</h3>
+                    <p>Create visuals from words. Describe what you want and let Viddo AI create stunning artwork and illustrations.</p>
+                    <button class="btn-primary">Create</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title scroll-fade">Why Choose Viddo AI</h2>
+            <p class="section-subtitle scroll-fade">Viddo AI integrates leading generative models to empower creators with a unified platform for both visuals and audio.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card scroll-fade">
+                    <div class="benefit-number">01</div>
+                    <h3>Unified Platform for Video and Music Creation</h3>
+                    <p>From AI video generation to AI music composition, Viddo AI provides a complete toolkit tailored for storytellers, marketers, and creators across media.</p>
+                </div>
+                
+                <div class="benefit-card scroll-fade">
+                    <div class="benefit-number">02</div>
+                    <h3>Powered by Leading AI Models</h3>
+                    <p>Access the best of Veo 3, Runway, PixVerse, Midjourney, and Suno - all seamlessly integrated for maximum creative flexibility.</p>
+                </div>
+                
+                <div class="benefit-card scroll-fade">
+                    <div class="benefit-number">03</div>
+                    <h3>Effortless Text-to-Content Workflows</h3>
+                    <p>Turn prompts into professional content with ease. Whether it's text to video or text to song, Viddo AI simplifies the process.</p>
+                </div>
+                
+                <div class="benefit-card scroll-fade">
+                    <div class="benefit-number">04</div>
+                    <h3>Built for Modern Creative Workflows</h3>
+                    <p>Creating for social media, advertising, storytelling, or music production - Viddo adapts to your goals with powerful solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item scroll-count">
+                    <div class="stat-number" data-target="1.5">0</div>
+                    <div class="stat-label">M+ Users</div>
+                </div>
+                <div class="stat-item scroll-count">
+                    <div class="stat-number" data-target="70">0</div>
+                    <div class="stat-label">+ Countries</div>
+                </div>
+                <div class="stat-item scroll-count">
+                    <div class="stat-number" data-target="20">0</div>
+                    <div class="stat-label">+ AI Models</div>
+                </div>
+                <div class="stat-item scroll-count">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">+ AI Effects</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content scroll-fade">
+                <h2>Unlock the Full Power of Viddo AI Premium</h2>
+                <p>Enjoy high-speed rendering, priority access to Veo3, Runway, PixVerse, Midjourney, and more AI Models, along with extended video and image generation.</p>
+                <button class="btn-primary btn-large">Get Premium</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Viddo AI</h3>
+                    <p>All-in-one AI video and image generation platform</p>
+                </div>
+                <div class="footer-section">
+                    <h4>AI Video</h4>
+                    <ul>
+                        <li><a href="#">Sora 2</a></li>
+                        <li><a href="#">Veo3</a></li>
+                        <li><a href="#">Runway Gen-4</a></li>
+                        <li><a href="#">Hailuo 2.3</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>AI Image</h4>
+                    <ul>
+                        <li><a href="#">Midjourney</a></li>
+                        <li><a href="#">GPT 4o</a></li>
+                        <li><a href="#">Flux 2</a></li>
+                        <li><a href="#">Nano Banana Pro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 viddo.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
