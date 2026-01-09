@@ -1,6 +1,88 @@
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Layout Toggle functionality
+    const layoutToggle = document.getElementById('layoutToggle');
+    const layoutDropdown = document.getElementById('layoutDropdown');
+    const layoutOptions = document.querySelectorAll('.layout-option');
+    
+    // Load saved layout
+    const savedLayout = localStorage.getItem('layout') || 'default';
+    document.body.setAttribute('data-layout', savedLayout);
+    updateActiveLayout(savedLayout);
+    
+    // Toggle layout dropdown
+    if (layoutToggle) {
+        layoutToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            layoutDropdown.classList.toggle('show');
+            // Close theme dropdown if open
+            if (themeDropdown) {
+                themeDropdown.classList.remove('show');
+            }
+        });
+    }
+    
+    // Handle layout selection
+    layoutOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const layout = this.getAttribute('data-layout');
+            applyLayout(layout);
+            layoutDropdown.classList.remove('show');
+        });
+    });
+    
+    // Apply layout function
+    function applyLayout(layout) {
+        document.body.style.transition = 'all 0.3s ease';
+        document.body.setAttribute('data-layout', layout);
+        localStorage.setItem('layout', layout);
+        updateActiveLayout(layout);
+        showLayoutNotification(layout);
+    }
+    
+    // Update active layout
+    function updateActiveLayout(layout) {
+        layoutOptions.forEach(option => {
+            if (option.getAttribute('data-layout') === layout) {
+                option.classList.add('active');
+            } else {
+                option.classList.remove('active');
+            }
+        });
+    }
+    
+    // Show layout notification
+    function showLayoutNotification(layout) {
+        const layoutNames = {
+            default: 'Default Layout',
+            compact: 'Compact Layout',
+            wide: 'Wide Layout',
+            minimal: 'Minimal Layout'
+        };
+        
+        const existingNotif = document.querySelector('.layout-notification');
+        if (existingNotif) {
+            existingNotif.remove();
+        }
+        
+        const notification = document.createElement('div');
+        notification.className = 'layout-notification';
+        notification.textContent = layoutNames[layout];
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.classList.add('show');
+        }, 10);
+        
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => {
+                notification.remove();
+            }, 300);
+        }, 2000);
+    }
+    
     // Theme Toggle functionality
     const themeToggle = document.getElementById('themeToggle');
     const themeDropdown = document.getElementById('themeDropdown');
@@ -16,6 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
         themeToggle.addEventListener('click', function(e) {
             e.stopPropagation();
             themeDropdown.classList.toggle('show');
+            // Close layout dropdown if open
+            if (layoutDropdown) {
+                layoutDropdown.classList.remove('show');
+            }
         });
     }
     
@@ -28,10 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Close dropdown when clicking outside
+    // Close dropdowns when clicking outside
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.theme-selector')) {
             themeDropdown.classList.remove('show');
+        }
+        if (!e.target.closest('.layout-selector')) {
+            layoutDropdown.classList.remove('show');
         }
     });
     
