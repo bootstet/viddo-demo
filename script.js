@@ -55,10 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Show layout notification
     function showLayoutNotification(layout) {
         const layoutNames = {
-            default: 'Default Layout',
-            compact: 'Compact Layout',
-            wide: 'Wide Layout',
-            minimal: 'Minimal Layout'
+            default: 'Classic Layout',
+            compact: 'Split Screen Layout',
+            wide: 'Wide Screen Layout',
+            minimal: 'Simple Layout'
         };
         
         const existingNotif = document.querySelector('.layout-notification');

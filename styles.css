@@ -59,85 +59,284 @@ body[data-theme="pink"] {
 }
 
 /* Layout Styles */
-/* Default Layout - Standard spacing */
+
+/* ========== DEFAULT LAYOUT - 经典居中 ========== */
+body[data-layout="default"] .hero-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+body[data-layout="default"] .hero-title {
+    font-size: 56px;
+}
+
+body[data-layout="default"] .hero-buttons {
+    flex-direction: row;
+    justify-content: center;
+}
+
 body[data-layout="default"] .container {
     max-width: 1280px;
 }
 
-body[data-layout="default"] .features-grid,
-body[data-layout="default"] .benefits-grid {
-    gap: 30px;
+/* ========== COMPACT LAYOUT - 左右分屏 ========== */
+body[data-layout="compact"] .navbar {
+    background: rgba(0, 0, 0, 0.95) !important;
 }
 
-/* Compact Layout - Tighter spacing */
-body[data-layout="compact"] .container {
-    max-width: 1200px;
+body[data-layout="compact"] .hero {
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 124px;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
-body[data-layout="compact"] .features,
-body[data-layout="compact"] .why-choose,
-body[data-layout="compact"] .cta {
-    padding: 60px 0;
+body[data-layout="compact"] .hero-content {
+    text-align: left;
+    max-width: 550px;
+    margin: 0;
+    margin-right: auto;
 }
 
-body[data-layout="compact"] .features-grid,
-body[data-layout="compact"] .benefits-grid {
+body[data-layout="compact"] .hero-title {
+    font-size: 64px;
+    line-height: 1.05;
+    text-align: left;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+body[data-layout="compact"] .hero-subtitle {
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+body[data-layout="compact"] .hero-description {
+    text-align: left;
+    font-size: 17px;
+    max-width: 480px;
+}
+
+body[data-layout="compact"] .hero-buttons {
+    flex-direction: row;
+    align-items: flex-start;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
-body[data-layout="compact"] .feature-card,
-body[data-layout="compact"] .benefit-card {
-    padding: 30px 20px;
+body[data-layout="compact"] .btn-primary,
+body[data-layout="compact"] .btn-secondary {
+    width: auto;
+    min-width: 180px;
+    padding: 16px 35px;
 }
 
-body[data-layout="compact"] .section-title {
-    font-size: 36px;
-    margin-bottom: 15px;
+body[data-layout="compact"] .hero-badge {
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-bottom: 35px;
 }
 
-/* Wide Layout - Maximum width */
-body[data-layout="wide"] .container {
-    max-width: 1600px;
+body[data-layout="compact"] .model-carousel {
+    margin-top: 50px;
+    margin-left: -8%;
+    margin-right: -8%;
 }
 
-body[data-layout="wide"] .features-grid,
-body[data-layout="wide"] .benefits-grid {
-    gap: 40px;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+/* ========== WIDE LAYOUT - 全屏宽幅 ========== */
+body[data-layout="wide"] .promo-banner {
+    display: none;
+}
+
+body[data-layout="wide"] .navbar {
+    top: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+}
+
+body[data-layout="wide"] .hero {
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+body[data-layout="wide"] .hero.promo-closed {
+    padding-top: 100px;
 }
 
 body[data-layout="wide"] .hero-content {
-    max-width: 1100px;
+    max-width: 100%;
+    text-align: center;
+    padding: 60px 80px;
 }
 
-/* Minimal Layout - Centered, focused */
+body[data-layout="wide"] .hero-title {
+    font-size: 96px;
+    letter-spacing: -4px;
+    font-weight: 900;
+    margin-bottom: 35px;
+}
+
+body[data-layout="wide"] .hero-subtitle {
+    font-size: 26px;
+    max-width: 100%;
+    margin: 0 auto 40px;
+    font-weight: 300;
+}
+
+body[data-layout="wide"] .hero-description {
+    font-size: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+body[data-layout="wide"] .hero-buttons {
+    flex-direction: row;
+    gap: 25px;
+    margin-top: 50px;
+}
+
+body[data-layout="wide"] .btn-primary,
+body[data-layout="wide"] .btn-secondary {
+    padding: 24px 80px;
+    font-size: 22px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+body[data-layout="wide"] .container {
+    max-width: 100%;
+    padding: 0 80px;
+}
+
+body[data-layout="wide"] .model-carousel {
+    margin-top: 80px;
+}
+
+body[data-layout="wide"] .model-card {
+    padding: 20px 50px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* ========== MINIMAL LAYOUT - 极简垂直 ========== */
+body[data-layout="minimal"] .navbar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    left: auto;
+    width: auto;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+}
+
+body[data-layout="minimal"] .nav-content {
+    padding: 0;
+}
+
+body[data-layout="minimal"] .logo,
+body[data-layout="minimal"] .nav-menu,
+body[data-layout="minimal"] .btn-signin {
+    display: none;
+}
+
+body[data-layout="minimal"] .nav-actions {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 50px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+body[data-layout="minimal"] .promo-banner {
+    display: none;
+}
+
+body[data-layout="minimal"] .hero {
+    min-height: 100vh;
+    padding: 120px 20px 80px;
+    justify-content: center;
+}
+
+body[data-layout="minimal"] .hero-video {
+    opacity: 0.2;
+}
+
+body[data-layout="minimal"] .hero-content {
+    max-width: 580px;
+    text-align: center;
+}
+
+body[data-layout="minimal"] .hero-title {
+    font-size: 38px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+body[data-layout="minimal"] .hero-subtitle {
+    font-size: 17px;
+    line-height: 2;
+    margin-bottom: 40px;
+    opacity: 0.85;
+    font-weight: 300;
+}
+
+body[data-layout="minimal"] .hero-description {
+    font-size: 16px;
+    line-height: 2;
+    margin-top: 40px;
+    opacity: 0.8;
+}
+
+body[data-layout="minimal"] .hero-buttons {
+    flex-direction: column;
+    gap: 18px;
+}
+
+body[data-layout="minimal"] .btn-primary,
+body[data-layout="minimal"] .btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    padding: 18px 45px;
+    border-radius: 10px;
+}
+
+body[data-layout="minimal"] .hero-badge {
+    padding: 12px 24px;
+    font-size: 14px;
+    border-radius: 30px;
+}
+
+body[data-layout="minimal"] .model-carousel {
+    display: none;
+}
+
 body[data-layout="minimal"] .container {
-    max-width: 960px;
+    max-width: 880px;
+}
+
+body[data-layout="minimal"] .features,
+body[data-layout="minimal"] .why-choose {
+    padding: 60px 0;
 }
 
 body[data-layout="minimal"] .features-grid {
     grid-template-columns: 1fr;
-    max-width: 600px;
+    max-width: 580px;
     margin: 0 auto;
+    gap: 18px;
 }
 
-body[data-layout="minimal"] .benefits-grid {
-    grid-template-columns: 1fr;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-body[data-layout="minimal"] .hero-content {
-    max-width: 700px;
-}
-
-body[data-layout="minimal"] .section-title {
-    font-size: 38px;
-}
-
-body[data-layout="minimal"] .feature-card,
-body[data-layout="minimal"] .benefit-card {
-    text-align: left;
+body[data-layout="minimal"] .feature-card {
+    text-align: center;
+    padding: 30px 25px;
+    border-radius: 16px;
 }
 
 body {
@@ -696,7 +895,7 @@ body {
     align-items: center;
     padding-top: 124px;
     overflow: hidden;
-    transition: padding 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero.promo-closed {
@@ -717,6 +916,7 @@ body {
     height: 100%;
     object-fit: cover;
     opacity: 1;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-overlay {
@@ -726,6 +926,24 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Layout specific video effects */
+body[data-layout="default"] .hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+body[data-layout="compact"] .hero-overlay {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+body[data-layout="wide"] .hero-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+body[data-layout="minimal"] .hero-overlay {
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .hero-content {
@@ -735,6 +953,7 @@ body {
     max-width: 900px;
     margin: 0 auto;
     padding: 40px 20px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-title {
@@ -746,12 +965,14 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-subtitle {
     font-size: 18px;
     color: var(--text-secondary);
     margin-bottom: 25px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-badge {
@@ -764,6 +985,7 @@ body {
     border-radius: 50px;
     margin-bottom: 30px;
     backdrop-filter: blur(10px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .badge-new {
@@ -792,6 +1014,7 @@ body {
     gap: 20px;
     justify-content: center;
     margin-bottom: 30px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary, .btn-secondary {
@@ -855,6 +1078,7 @@ body {
     color: var(--text-secondary);
     max-width: 700px;
     margin: 0 auto;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Animation Classes */
@@ -884,6 +1108,7 @@ body {
     overflow: hidden;
     padding: 40px 0;
     margin-top: 60px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .carousel-track {
