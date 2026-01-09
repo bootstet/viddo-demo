@@ -58,7 +58,259 @@ body[data-theme="pink"] {
     --gradient-to: #EC4899;
 }
 
+/* Theme 6: DeeVid Blue-Cyan */
+body[data-theme="deevid"] {
+    --primary: #3CA2F6;
+    --secondary: #00CFFF;
+    --gradient-from: #0047FF;
+    --gradient-to: #00FFD1;
+    --text-gradient-start: #FFF;
+    --text-gradient-mid: #A2FFEE;
+    --text-gradient-end: #7FE7FF;
+}
+
 /* Layout Styles */
+
+/* ========== DEEVID LAYOUT - 渐变标题光效 ========== */
+body[data-layout="deevid"] {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body[data-layout="deevid"] .promo-banner {
+    display: none;
+}
+
+body[data-layout="deevid"] .navbar {
+    top: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body[data-layout="deevid"] .navbar.scrolled {
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body[data-layout="deevid"] .nav-content {
+    padding: 12px 0;
+    justify-content: flex-end;
+    gap: 40px;
+}
+
+body[data-layout="deevid"] .logo {
+    margin-right: auto;
+}
+
+body[data-layout="deevid"] .logo h1 {
+    font-size: 20px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body[data-layout="deevid"] .nav-menu {
+    gap: 32px;
+}
+
+body[data-layout="deevid"] .nav-menu a {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    transition: color 0.2s ease;
+}
+
+body[data-layout="deevid"] .nav-menu a:hover {
+    color: var(--primary);
+}
+
+body[data-layout="deevid"] .nav-menu a::after {
+    display: none;
+}
+
+body[data-layout="deevid"] .btn-signin {
+    background: linear-gradient(135deg, var(--gradient-from), var(--secondary));
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+body[data-layout="deevid"] .btn-signin:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+body[data-layout="deevid"] .hero {
+    padding-top: 180px;
+    padding-bottom: 80px;
+    background: #000;
+}
+
+body[data-layout="deevid"] .hero.promo-closed {
+    padding-top: 180px;
+}
+
+body[data-layout="deevid"] .video-bg {
+    opacity: 0.15;
+}
+
+body[data-layout="deevid"] .hero-content {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+body[data-layout="deevid"] .hero-title {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 32px;
+    letter-spacing: -2px;
+    background: linear-gradient(88deg, #FFF 6.6%, var(--secondary) 50.07%, var(--primary) 84.37%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+body[data-layout="deevid"] .hero-subtitle {
+    display: none;
+}
+
+body[data-layout="deevid"] .hero-description {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+body[data-layout="deevid"] .hero-badge {
+    background: color-mix(in srgb, var(--primary) 15%, transparent);
+    border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+body[data-layout="deevid"] .badge-new {
+    background: linear-gradient(135deg, var(--gradient-from), var(--secondary));
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+body[data-layout="deevid"] .btn-primary {
+    background: linear-gradient(to right, var(--gradient-from) -20.05%, var(--secondary) 56.97%, var(--gradient-to) 117.69%);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 18px 44px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--primary) 30%, transparent);
+    transition: all 0.3s ease;
+}
+
+body[data-layout="deevid"] .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px color-mix(in srgb, var(--primary) 40%, transparent);
+}
+
+body[data-layout="deevid"] .btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 18px 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+body[data-layout="deevid"] .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+body[data-layout="deevid"] .model-carousel {
+    margin-top: 80px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body[data-layout="deevid"] .model-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 28px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+body[data-layout="deevid"] .model-card:hover {
+    background: color-mix(in srgb, var(--primary) 15%, transparent);
+    border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+body[data-layout="deevid"] .features-section {
+    background: #000;
+}
+
+body[data-layout="deevid"] .section-title {
+    font-size: 48px;
+    font-weight: 800;
+    background: linear-gradient(to right, #FFF 20%, var(--secondary) 60%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body[data-layout="deevid"] .feature-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.3s ease;
+}
+
+body[data-layout="deevid"] .feature-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: color-mix(in srgb, var(--primary) 20%, transparent);
+    transform: translateY(-8px);
+}
 
 /* ========== DEFAULT LAYOUT - 经典居中 ========== */
 body[data-layout="default"] .hero-content {
